@@ -1,0 +1,51 @@
+# Getting Started
+
+Create below Folder structure:
+/apps/inbound/
+/apps/outbound/
+
+
+
+URLs:
+-----
+Url to read file:
+http://localhost:8080/pallavi/readFile
+
+Url to get saved batch file details:
+http://localhost:8080/pallavi/getAllBatchFiles
+
+Url to access h2 in-memory database
+http://localhost:8080/h2
+
+UI:
+http://localhost:8080/transactions
+
+
+
+--Update Query
+update AGGREGATION
+set STATUS = 'SANCTION_END'
+,SANCTION_STATUS   = 'C'
+where
+AGGREGATION_ID = 2;
+
+
+
+select
+tv.*,  a.*, t.*, b.*
+from BATCH_FILE b, AGGREGATION a, TRANSACTION t, TRANSACTION_VER tv
+where
+b.batch_number = 'FN13092020001'
+and a.batch_file_id = b.batch_file_id
+and t.AGGREGATION_ID  = a.AGGREGATION_ID
+and tv.TRANSACTION_ID = t.TRANSACTION_ID
+order by tv.TRANSACTION_VER_NO;
+
+
+Resources:
+https://www.tutorialspoint.com/spring_boot/spring_boot_service_components.htm
+
+https://www.baeldung.com/hibernate-identifiers
+https://www.objectdb.com/java/jpa/entity/generated
+
+https://howtodoinjava.com/spring-batch/job-scheduler-example/
