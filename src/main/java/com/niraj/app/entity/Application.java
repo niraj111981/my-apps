@@ -1,8 +1,15 @@
 package com.niraj.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Application {
 
     @Id
@@ -17,7 +24,7 @@ public class Application {
     private String description;
     private String owner;
 
-    public Application() {
+    /*public Application() {
     }
 
     public Application(String name, String owner,
@@ -66,5 +73,5 @@ public class Application {
                 ", owner=" + owner +
                 ", description='" + description + '\'' +
                 '}';
-    }
+    }*/
 }

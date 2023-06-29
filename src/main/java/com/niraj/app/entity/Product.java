@@ -1,9 +1,16 @@
 package com.niraj.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Product {
 
     @Id
@@ -27,7 +34,7 @@ public class Product {
     private Date creationDate, updateDate, expirationDate;
 
     //The default constructor exists only for the sake of JPA; which use it directly, so it is designated as protected
-    protected Product() {
+    /*protected Product() {
     }
 
     public Product(long productId, String productName, String productLongName, String productType, String productCategory, String productQuality, String barCode, String manufacturedBy, String manufacturedDetails, String status, String remarks, long quantity, long insideQuantity, long sizeWidth, long sizeLength, long sizeDepth, long weight, String measurementUnit, String weightMeasurementUnit, long priceMoney, long priceCoin, String priceUnit, String createdBy, String updatedBy, Date creationDate, Date updateDate, Date expirationDate) {
@@ -199,5 +206,5 @@ public class Product {
                 ", updateDate=" + updateDate +
                 ", expirationDate=" + expirationDate +
                 '}';
-    }
+    }*/
 }

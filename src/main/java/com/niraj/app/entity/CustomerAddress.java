@@ -1,8 +1,15 @@
 package com.niraj.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class CustomerAddress {
 
     @Id
@@ -55,7 +62,7 @@ public class CustomerAddress {
     @Column(name="updated_by")
     private String updatedBy;
 
-    public CustomerAddress() {
+    /*public CustomerAddress() {
     }
 
     public CustomerAddress(long customerAddId, long customerId, String customerAdd1, String customerAdd2, String customerAdd3, String customerLocality, String customerCity, String customerState, String customerCountry, String customerPincode, String landMark, String status, String creationDate, String createdBy, String updateDate, String updatedBy) {
@@ -161,5 +168,5 @@ public class CustomerAddress {
                 ", updateDate='" + updateDate + '\'' +
                 ", updatedBy='" + updatedBy + '\'' +
                 '}';
-    }
+    }*/
 }

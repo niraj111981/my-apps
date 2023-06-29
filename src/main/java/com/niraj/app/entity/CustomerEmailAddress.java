@@ -4,6 +4,9 @@ import java.util.regex.Pattern;
 
 import javax.persistence.*;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.util.Assert;
 
 /**
@@ -12,6 +15,9 @@ import org.springframework.util.Assert;
  * @author Niraj
  */
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class CustomerEmailAddress {
 
     private static final String EMAIL_REGEX = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
@@ -33,7 +39,7 @@ public class CustomerEmailAddress {
      *
      * @param emailAddress must not be {@literal null} or empty.
      */
-    public CustomerEmailAddress(long emailAddId, long customerId, String emailAddress) {
+    /*public CustomerEmailAddress(long emailAddId, long customerId, String emailAddress) {
         Assert.isTrue(isValid(emailAddress), "Invalid email address!");
         this.emailAddId = emailAddId;
         this.customerId = customerId;
@@ -44,13 +50,13 @@ public class CustomerEmailAddress {
 
     }
 
-    /**
+    *//**
      * Returns whether the given {@link String} is a valid {@link CustomerEmailAddress} which means you can safely instantiate the
      * class.
      *
      * @param candidate
      * @return
-     */
+     *//*
     public static boolean isValid(String candidate) {
         return candidate == null ? false : PATTERN.matcher(candidate).matches();
     }
@@ -74,5 +80,5 @@ public class CustomerEmailAddress {
                 ", customerId=" + customerId +
                 ", emailAddress='" + emailAddress + '\'' +
                 '}';
-    }
+    }*/
 }

@@ -1,8 +1,15 @@
 package com.niraj.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class CustomerAccount {
 
     @Id
@@ -31,7 +38,7 @@ public class CustomerAccount {
     @Column(name="created_by")
     private String createdBy;
 
-    public CustomerAccount() {
+    /*public CustomerAccount() {
     }
 
     public CustomerAccount(long accountId, long customerId, String accountNumber, String ifscCode, String status, String effectiveDate, String creationDate, String createdBy) {
@@ -89,5 +96,5 @@ public class CustomerAccount {
                 ", creationDate='" + creationDate + '\'' +
                 ", createdBy='" + createdBy + '\'' +
                 '}';
-    }
+    }*/
 }

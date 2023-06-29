@@ -1,9 +1,16 @@
 package com.niraj.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Invoice {
 
     @Id
@@ -23,7 +30,7 @@ public class Invoice {
     private Date creationDate, updateDate, orderDate, expectedDeliveryDate, deliveryDate;
 
     //The default constructor exists only for the sake of JPA; which use it directly, so it is designated as protected
-    protected Invoice() {
+    /*protected Invoice() {
     }
 
     public Invoice(long invoiceId, long orderId, String invoiceNumber, String status, String remarks, long total, long advance, long balance, String createdBy, String updatedBy, Date creationDate, Date updateDate, Date orderDate, Date expectedDeliveryDate, Date deliveryDate) {
@@ -123,5 +130,5 @@ public class Invoice {
                 ", expectedDeliveryDate=" + expectedDeliveryDate +
                 ", deliveryDate=" + deliveryDate +
                 '}';
-    }
+    }*/
 }

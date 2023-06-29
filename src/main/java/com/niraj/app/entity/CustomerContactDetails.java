@@ -1,5 +1,8 @@
 package com.niraj.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.util.Assert;
 
 import javax.persistence.*;
@@ -10,6 +13,9 @@ import javax.persistence.*;
  * @author Niraj
  */
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class CustomerContactDetails {
 
     @Id
@@ -32,7 +38,7 @@ public class CustomerContactDetails {
     @Column(name = "contact_type", columnDefinition = "mobile")
     private String contactType;
 
-    protected CustomerContactDetails() {
+    /*protected CustomerContactDetails() {
 
     }
 
@@ -79,5 +85,5 @@ public class CustomerContactDetails {
                 ", contactNumber=" + contactNumber +
                 ", contactType='" + contactType + '\'' +
                 '}';
-    }
+    }*/
 }

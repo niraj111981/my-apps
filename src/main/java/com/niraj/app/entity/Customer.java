@@ -1,10 +1,15 @@
 package com.niraj.app.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
 
 @Entity
+@Getter @Setter @NoArgsConstructor
 public class Customer {
 
     @Id
@@ -22,7 +27,7 @@ public class Customer {
     private Date creationDate, updateDate;
 
     //The default constructor exists only for the sake of JPA; which use it directly, so it is designated as protected
-    protected Customer() {
+   /* protected Customer() {
     }
 
     public Customer(long customerId, String initialName, String firstName, String secondName, String lastName, String custType, String gender, String status, String remarks, long dobDate, long dobMonth, long dobYear, String createdBy, String updatedBy, Date creationDate, Date updateDate) {
@@ -128,5 +133,5 @@ public class Customer {
                 ", creationDate=" + creationDate +
                 ", updateDate=" + updateDate +
                 '}';
-    }
+    }*/
 }
